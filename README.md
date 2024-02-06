@@ -1,16 +1,15 @@
-**Backend README.md:**
 
 ```
-# Healthcare Backend
+#Healthcare Backend
 
 This repository contains the backend codebase for the Healthcare application. It provides a GraphQL API for patient admission management.
 
-## Features
+# Features
 
 - GraphQL API for patient admission management
 - CRUD operations for patients (Create, Read, Update, Delete)
 
-## Technologies Used
+# Technologies Used
 
 - Python
 - Django
@@ -47,17 +46,17 @@ python manage.py runserver
 
 The GraphQL API will be available at `http://localhost:8000/graphql/`.
 
-## Documentation
+# Documentation
 
 - [Django Documentation](https://docs.djangoproject.com/)
 - [Django REST Framework Documentation](https://www.django-rest-framework.org/)
 - [Graphene-Django Documentation](https://docs.graphene-python.org/projects/django/en/latest/)
 
-## Contributing
+# Contributing
 
 Contributions are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
@@ -69,18 +68,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This repository contains the frontend codebase for the Healthcare application. It provides a user interface for interacting with the patient admission management system.
 
-## Features
+# Features
 
 - Fetches patient data from the backend GraphQL API
 - Displays a list of patients
 
-## Technologies Used
+# Technologies Used
 
 - React
 - TypeScript
 - graphql-request
 
-## Getting Started
+# Getting Started
 
 1. Clone the repository:
 
@@ -103,18 +102,17 @@ npm start
 
 The frontend application will be available at `http://localhost:3000/`.
 
-## Documentation
+# Documentation
 
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [graphql-request Documentation](https://www.npmjs.com/package/graphql-request)
 
-## Contributing
+# Contributing
 
 Contributions are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-# healthcare-api
