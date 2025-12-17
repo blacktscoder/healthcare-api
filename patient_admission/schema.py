@@ -1,6 +1,8 @@
 import graphene
 from graphene_django.types import DjangoObjectType
 from .models import Patient
+from graphql import GraphQLError
+
 
 class PatientType(DjangoObjectType):
     class Meta:
@@ -22,11 +24,19 @@ class CreatePatient(graphene.Mutation):
         name = graphene.String(required=True)
         age = graphene.Int(required=True)
         gender = graphene.String(required=True)
+        admission_status = graphene.String()
+        room_number = graphene.String()
 
     patient = graphene.Field(PatientType)
 
-    def mutate(self, info, name, age, gender):
-        patient = Patient.objects.create(name=name, age=age, gender=gender)
+    def mutate(self, info, name, age, gender, admission_status="ADMITTED", room_number=None):
+        patient = Patient.objects.create(
+            name=name, 
+            age=age, 
+            gender=gender,
+            admission_status=admission_status,
+            room_number=room_number
+            )
         return CreatePatient(patient=patient)
 
 class UpdatePatient(graphene.Mutation):
@@ -35,11 +45,16 @@ class UpdatePatient(graphene.Mutation):
         name = graphene.String()
         age = graphene.Int()
         gender = graphene.String()
+        admission_status = graphene.String()
+        room_number = graphene.String()
 
     patient = graphene.Field(PatientType)
 
     def mutate(self, info, id, name=None, age=None, gender=None):
         patient = Patient.objects.get(pk=id)
+
+        if patient.admission_status== "DISCHARGED":
+            raise GraphQLError("Cannot updatea discharged patient")
         if name:
             patient.name = name
         if age:

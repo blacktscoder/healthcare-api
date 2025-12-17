@@ -1,191 +1,98 @@
-# 🏥 Healthcare Backend API & Data Processing System
+# 🏥 Healthcare Backend API
 
-A **backend-focused healthcare API** designed to support patient admission workflows, secure data processing, and scalable integration with frontend and external services.
+A **clean, backend-first healthcare API** built to manage patient admissions, store data safely, and power frontend apps with reliable APIs.
 
-This service acts as the **core backend layer** for a healthcare application, exposing structured APIs for managing patient data and operational workflows, with an architecture suitable for future analytics and AI-driven extensions.
-
----
-
-## 🎯 Project Purpose
-
-The primary goal of this backend system is to:
-
-* 📋 Manage patient admission and healthcare-related data
-* 🔐 Enforce secure and structured data access
-* 🔄 Serve as a reliable API layer for frontend clients
-* 📈 Support scalability and future intelligence features (analytics / AI)
+Think of this as the **engine** behind a healthcare system — no UI fluff, just solid backend logic.
 
 ---
 
-## 🚀 Core Backend Features
+## ✨ What this project does
 
-### 🧩 API-Driven Architecture
+* 📋 Handles patient admissions and related data
+* 🔐 Keeps healthcare data structured and secure
+* 🔄 Exposes a clear API for frontend apps
+* 📈 Built to scale and grow into analytics or AI features
 
-* Backend exposes **API endpoints** for patient admission workflows
-* Designed for clean separation between frontend and backend layers
+---
 
-### 🔐 Secure Data Handling
+## 🧠 How it’s built
 
-* Structured request validation
-* Controlled access to sensitive healthcare-related data
-* Clear domain boundaries to reduce data leakage risk
-
-### 🔁 GraphQL-Based Communication
-
-* Efficient querying and mutation of patient data
-* Strongly typed contracts between frontend and backend
-* Reduced over-fetching and predictable data access patterns
-
-### 🧠 Backend-First Design
-
-* Business logic centralized in backend services
-* Frontend acts strictly as a consumer of backend APIs
-* Prepared for future extensions such as analytics or AI services
+* **Backend-first** design (business logic lives on the server)
+* **GraphQL API** for flexible, predictable data access
+* **Strong typing** to avoid bugs early
+* Clear separation between data, logic, and API layers
 
 ---
 
 ## 🛠️ Tech Stack
 
-### ⚙️ Backend & API
-
-* **Node.js**
-* **TypeScript**
-* **GraphQL**
-* **graphql-request** (API client layer)
-
-### 🧱 Architecture Principles
-
-* API-first design
-* Strong typing for safety and maintainability
-* Clear separation of concerns between data, logic, and transport layers
+* 🐍 **Python / Django**
+* 🔗 **GraphQL (Graphene)**
+* 🗄️ **PostgreSQL**
+* 🧱 **Django ORM & migrations**
 
 ---
 
-## 🗂️ Project Structure
+## 📂 Project Structure (simple & clean)
 
 ```text
-├── src
-│   ├── api
-│   ├── services
-│   ├── graphql
-│   └── types
-├── package.json
-└── README.md
+patient_admission/
+├── models.py     # database models
+├── schema.py     # GraphQL queries & mutations
+├── admin.py      # admin visibility
+├── tests.py      # (ready for tests)
 ```
 
-### 📁 Key Areas
+---
 
-* **api/**
-  Handles API communication with backend services.
+## 🧭 What’s coming next
 
-* **services/**
-  Encapsulates backend interaction logic and data handling.
+This project is designed to grow by **adding domains**, not by bloating a single app.
+Planned extensions include:
 
-* **graphql/**
-  GraphQL queries and mutations used to communicate with backend endpoints.
+```text
+appointments/   # scheduling & visit management
+surgeons/       # staff & specialist access
+billing/        # payments, invoices, insurance
+notifications/  # reminders, alerts, follow-ups
+auth/           # roles, permissions, access control
+```
 
-* **types/**
-  TypeScript definitions for safer data contracts.
+Each module will follow the same backend pattern:
+**models → schema → business rules → database**.
 
 ---
 
-## ⚙️ Getting Started
-
-### ✅ Prerequisites
-
-* Node.js (v16+ recommended)
-* npm or yarn
-* Access to a running backend GraphQL service
-
----
-
-### 📦 Installation
-
-1. **Clone the repository**
+## ▶️ Run it locally
 
 ```bash
-git clone https://github.com/your-username/healthcare-backend-api.git
-cd healthcare-backend-api
+python3 manage.py migrate
+python3 manage.py runserver
 ```
 
-2. **Install dependencies**
+Open GraphQL:
 
-```bash
-npm install
+```
+http://127.0.0.1:8000/graphql/
 ```
 
-3. **Configure environment variables**
-   Create a `.env` file and define:
+---
 
-* Backend GraphQL endpoint
-* Authentication or API keys (if applicable)
+## 🔐 Security & Data Integrity
+
+* No direct database access from clients
+* All rules enforced at the API level
+* Ready for role-based access control
 
 ---
 
-### ▶️ Run the Service
+## 🚀 Why this project matters
 
-```bash
-npm start
-```
+This repo shows:
 
-The backend integration layer will start and be ready to serve API requests.
+* ✅ Real backend architecture
+* ✅ PostgreSQL-backed data models
+* ✅ Business rules enforced server-side
+* ✅ Production-style API design
 
----
-
-## 🧪 Testing & Validation
-
-* Strong typing ensures early error detection
-* API contracts are validated through GraphQL schemas
-* Designed for easy addition of unit and integration tests
-
----
-
-## 🔐 Security Considerations
-
-* No direct database access from the client layer
-* All sensitive logic handled by backend services
-* Prepared for role-based access and authorization enforcement
-
----
-
-## 📈 Scalability & Future Extensions
-
-This backend system is designed to support:
-
-* 📊 Healthcare analytics pipelines
-* 🤖 AI-assisted patient insights
-* 🔗 Integration with external healthcare platforms
-* 📡 Event-driven workflows
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome, especially in:
-
-* Improving API structure
-* Adding validation and error handling
-* Enhancing documentation
-* Extending test coverage
-
-Please open a pull request with a clear description of your changes.
-
----
-
-## 📄 License
-
-MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
-## ✅ Why This README Matters
-
-This README now clearly communicates that this project is:
-
-* ✔️ Backend-focused
-* ✔️ API-driven
-* ✔️ Healthcare-domain aware
-* ✔️ Designed for scalability and security
-* ✔️ Suitable for backend, health-tech, and AI-adjacent roles
-
-
+Perfect for **backend, health-tech, and AI-adjacent roles**.
